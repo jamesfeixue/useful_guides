@@ -23,19 +23,12 @@ Docker
 		○ docker image - executable, packaged configuration similar to EC2 image
 
 
-commands
-FROM 
-- sets base images e.g. ubuntu:16.04; can also use image as base image
-LABEL
-	- add metadata to image
-RUN 
-	- run shell commands
-	- apt-get install -7 python-pip python-dev
-COPY ./requirements.txt /app/requirements.txt
-	- copy file from the machine the Docker file is being built on into the image
-WORKDIR /app
-	- working diretory for any subsequent instruction that will be run
-	- if the directory doesn't exist, this will create it
+### Commands
+- FROM: sets base images e.g. ubuntu:16.04; can also use image as base image
+- LABEL: add metadata to image
+- RUN: run shell commands `apt-get install -7 python-pip python-dev`
+- COPY `./requirements.txt /app/requirements.txt` : copy file from the machine the Docker file is being built on into the image
+- WORKDIR /app : working diretory for any subsequent instruction that will be run, if the directory doesn't exist, this will create it
 RUN pip install -r requirements.text
 COPY . /app
 	- copy all the source code into working directory
