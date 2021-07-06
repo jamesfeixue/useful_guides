@@ -1,4 +1,4 @@
-#Building Containerized Applications on AWS
+# Building Containerized Applications on AWS
 
 ## Introduction
 
