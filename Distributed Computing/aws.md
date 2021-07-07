@@ -56,25 +56,32 @@ Project: web service where users can sign-up, upload photos, and print photos
   -  Identity and Access Management are noot limited to a region e.g. users can make api calls not bound to particular geographic region
   
 ### Amazon Virtual Private Cloud (VPC)
-- Basics
+- An isolated network
   - private ip address
   - optional public ip address, also Elastic IP
-  - keep webserver private
-  - isolated network, connected to corporate networks, private networks
+  - can be connected to corporate networks, private networks
+  - scope: regional
 
 - IP address (internet protocol)
   - IPv4 defiines an IP address as a 32-bit number
  
-- Managing IP addresses on a per-instance basis is hard
-  - **subnets**
-  - subnet given a range of IP addresses using **CIDR notation** e.g. 10.0.0.0/16
+- **subnets**: because managing IP addresses on a per-instance basis is hard
+  - subnet given a range of IP addresses using **CIDR notation**, which is a representation of an ip address e.g. 10.0.0.0/16
   - /16 refers to keeping the first 16 bits fixed
   - VPC has an overall CIDR block
+  - scope: AZ
+  - Use CloudFormation template to manage the subnets in a VPC
 
-- CIDR block
-
+- network traffic between subnets
+  - traffic between subnets is enabled by default
+  - need internet gateway (connection type for VPC) for webservers to have direct access to internet
+  - rules that route traffic from web server subnet out to internal gateway in route tables
+  - do not associate such rules for subnets we want to keep private
 
 ### Developer responsibility
+
+
+
 ### EC2 Metadata
 ### Logs, SSH, instance metadata
 
