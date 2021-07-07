@@ -16,9 +16,7 @@ Project: web service where users can sign-up, upload photos, and print photos
 - communicating upload event to trigger on-premise processing and printing
 - troubleshoot performance issues, telemetry data to build map of services used by application, determine latency and identify errors
 
-## Week 1
-Goals: 
-- AWS Free Tier
+## Basics
 - Intro to **EC2 (Elastic Compute Cloud)**
   - APIs
   - scalability/re-sizable compute capacity
@@ -35,12 +33,17 @@ Goals:
   - storage
   - key pairs
 
-- Virtual Server Infrastructure
+## Cloud Infrastructure and Responsibility
+
+### Virtual Server Infrastructure
+
+- Basics
   - virtual machine provide VCPU and RAM resources
   - runs on a host server and a **hypervisor** mediates access between code and server
   - hypervisor also provides isolation from other workloads
   - **availability zone (AZ)** is a logical grouping of data centers where the host is located e.g. us-west-2b
   - also offer DNS, CDN (content delivery network) to cache web content a.k.a. infrastructure edge locations
+  - Service Oriented Architectures and APIs in AWS
 
 - Availability Zones
   - each AZ within a region is isolated from other for catastrophe prevention
@@ -52,35 +55,48 @@ Goals:
   -  S3 will be regional in scope and data will be replicated within AWS facilities within a region
   -  Identity and Access Management are noot limited to a region e.g. users can make api calls not bound to particular geographic region
   
-Service Oriented Architectures and APIs in AWS
-EC2
+### Amazon Virtual Private Cloud (VPC)
+- Basics
+  - private ip address
+  - optional public ip address, also Elastic IP
+  - keep webserver private
+  - isolated network, connected to corporate networks, private networks
 
-### Cloud Infrastructure and Responsibility
-Infrastructure
-Amazon Virtual Private Cloud
-Developer responsibility
-EC2 Metadata
-Logs, SSH, instance metadata
+- IP address (internet protocol)
+  - IPv4 defiines an IP address as a 32-bit number
+ 
+- Managing IP addresses on a per-instance basis is hard
+  - **subnets**
+  - subnet given a range of IP addresses using **CIDR notation** e.g. 10.0.0.0/16
+  - /16 refers to keeping the first 16 bits fixed
+  - VPC has an overall CIDR block
 
-### Invoking AWS APIs & AWS Identity and Access Management
+- CIDR block
 
-### Amazon S3
 
-### Working with Development Environment
+### Developer responsibility
+### EC2 Metadata
+### Logs, SSH, instance metadata
 
-### Amazon Rekognition
+## Invoking AWS APIs & AWS Identity and Access Management
 
-### Storing Structured Data using AWS Managed Databases
+## Amazon S3
 
-### Availability and Application Failure
+## Working with Development Environment
 
-### Adding Support for Users and Private Data to the Application
+## Amazon Rekognition
 
-### Debugging and Profiling a Distributed System
+## Storing Structured Data using AWS Managed Databases
 
-### Taking a Task Off the Server Asynchronously
+## Availability and Application Failure
 
-### Making System More Distributed
+## Adding Support for Users and Private Data to the Application
 
-### Queueing and On-Premise Hardware
+## Debugging and Profiling a Distributed System
+
+## Taking a Task Off the Server Asynchronously
+
+## Making System More Distributed
+
+## Queueing and On-Premise Hardware
 
